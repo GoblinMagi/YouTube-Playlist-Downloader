@@ -24,5 +24,5 @@ jobs:
         pylint $(git ls-files '*.py')
     - name: 'Test run of video downloader'
       run: |
-        python ytdl.py 'https://www.youtube.com/watch?v=0EqSXDwTq6U&pp=ygUVY2hhcmxpZSBiaXQgbXkgZmluZ2Vy'
+        python3 ytdl.py 'https://www.youtube.com/watch?v=0EqSXDwTq6U&pp=ygUVY2hhcmxpZSBiaXQgbXkgZmluZ2Vy'
 
