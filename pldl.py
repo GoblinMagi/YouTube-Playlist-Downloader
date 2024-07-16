@@ -4,7 +4,7 @@ import os
 from sys import argv
 from pathlib import Path
 import ffmpeg
-from pytube import Playlist
+from pytubefix import Playlist
 
 def video_audio_mux(path_audiosource, path_imagesource, out_video_path):
     """Download audio and video and merge with ffmpeg"""
