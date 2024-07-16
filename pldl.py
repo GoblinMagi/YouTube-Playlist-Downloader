@@ -1,13 +1,16 @@
 #! /usr/bin/python
-from pytube import YouTube, Playlist
-from pathlib import Path
+"""Downloads an entire Youtube Playlist in highest quality"""
+import os
 from sys import argv
-import os, ffmpeg
+from pathlib import Path
+import ffmpeg
+from pytube import Playlist
 
 def video_audio_mux(path_audiosource, path_imagesource, out_video_path):
-    video = ffmpeg.input(path_imagesource).video
-    audio = ffmpeg.input(path_audiosource).audio
-    ffmpeg.output(audio, video, out_video_path, vcodec='copy', acodec='copy').run()
+    """Download audio and video and merge with ffmpeg"""
+    f_video = ffmpeg.input(path_imagesource).video
+    f_audio = ffmpeg.input(path_audiosource).audio
+    ffmpeg.output(f_audio, f_video, out_video_path, vcodec='copy', acodec='copy').run()
 
 p = Playlist(argv[1])
 dl_dir = Path.home() / 'Downloads'
